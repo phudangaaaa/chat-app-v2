@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.chatapp.client.controller.MainController"
+            style="-fx-background-color: #ECF0F1;">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox style="-fx-background-color: #34495E; -fx-padding: 10;" spacing="10" alignment="CENTER_LEFT">
+            <Label text="Chat Application" textFill="white" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="userLabel" textFill="white" style="-fx-font-size: 14px;"/>
+            <MenuButton fx:id="statusMenuButton" text="Status" textFill="white"
+                        style="-fx-background-color: #2C3E50; -fx-text-fill: white;">
+                <items>
+                    <MenuItem text="Online" onAction="#setStatusOnline"/>
+                    <MenuItem text="Away" onAction="#setStatusAway"/>
+                    <MenuItem text="Busy" onAction="#setStatusBusy"/>
+                    <SeparatorMenuItem/>
+                    <MenuItem text="Edit Profile" onAction="#handleEditProfile"/>
+                </items>
+            </MenuButton>
+            <Button text="Logout" onAction="#handleLogout"
+                    style="-fx-background-color: #E74C3C; -fx-text-fill: white;"/>
+        </HBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <SplitPane dividerPositions="0.3">
+            <!-- Left Sidebar -->
+            <VBox style="-fx-background-color: white; -fx-padding: 10;" spacing="10" prefWidth="300">
+
+                <!-- Search Bar -->
+                <HBox spacing="5">
+                    <TextField fx:id="searchField" promptText="Search users..." HBox.hgrow="ALWAYS"
+                               style="-fx-background-color: #ECF0F1;"/>
+                    <Button text="Search" onAction="#handleSearch"
+                            style="-fx-background-color: #3498DB; -fx-text-fill: white;"/>
+                </HBox>
+
+                <!-- Tabs for Friends/Groups/Requests -->
+                <TabPane fx:id="tabPane" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+
+                    <!-- Friends Tab -->
+                    <Tab text="Friends">
+                        <VBox spacing="5">
+                            <Button text="+ Add Friend" onAction="#handleAddFriend" maxWidth="Infinity"
+                                    style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
+                            <ListView fx:id="friendListView" VBox.vgrow="ALWAYS"
+                                      onMouseClicked="#handleFriendClick"/>
+                        </VBox>
+                    </Tab>
+
+                    <!-- Groups Tab -->
+                    <Tab text="Groups">
+                        <VBox spacing="5">
+                            <Button text="+ Create Group" onAction="#handleCreateGroup" maxWidth="Infinity"
+                                    style="-fx-background-color: #9B59B6; -fx-text-fill: white;"/>
+                            <ListView fx:id="groupListView" VBox.vgrow="ALWAYS"
+                                      onMouseClicked="#handleGroupClick"/>
+                        </VBox>
+                    </Tab>
+
+                    <!-- Friend Requests Tab -->
+                    <Tab text="Requests">
+                        <VBox spacing="5">
+                            <Button text="Refresh" onAction="#handleRefreshRequests" maxWidth="Infinity"
+                                    style="-fx-background-color: #95A5A6; -fx-text-fill: white;"/>
+                            <ListView fx:id="requestListView" VBox.vgrow="ALWAYS"/>
+                        </VBox>
+                    </Tab>
+                </TabPane>
+            </VBox>
+
+            <!-- Right Chat Area -->
+            <VBox fx:id="chatArea" style="-fx-background-color: white;" spacing="0">
+
+                <!-- Chat Header -->
+                <HBox fx:id="chatHeader" style="-fx-background-color: #34495E; -fx-padding: 15;" spacing="10"
+                      alignment="CENTER_LEFT" visible="false">
+                    <Label fx:id="chatTitleLabel" textFill="white" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="callButton" text="📞 Call" onAction="#handleCall"
+                            style="-fx-background-color: #27AE60; -fx-text-fill: white;"/>
+                    <Button fx:id="videoCallButton" text="📹 Video" onAction="#handleVideoCall"
+                            style="-fx-background-color: #3498DB; -fx-text-fill: white;"/>
+                </HBox>
+
+                <!-- Messages Area -->
+                <ScrollPane fx:id="messageScrollPane" VBox.vgrow="ALWAYS" fitToWidth="true"
+                            style="-fx-background-color: #ECF0F1;" visible="false">
+                    <VBox fx:id="messageContainer" spacing="5" style="-fx-padding: 10;"/>
+                </ScrollPane>
+
+                <!-- Welcome Message (when no chat selected) -->
+                <VBox fx:id="welcomePane" alignment="CENTER" VBox.vgrow="ALWAYS" spacing="20">
+                    <Label text="Welcome to Chat Application" style="-fx-font-size: 24px; -fx-text-fill: #7F8C8D;"/>
+                    <Label text="Select a friend or group to start chatting" style="-fx-font-size: 14px; -fx-text-fill: #95A5A6;"/>
+                </VBox>
+
+                <!-- Message Input Area -->
+                <HBox fx:id="messageInputArea" spacing="10" style="-fx-padding: 10; -fx-background-color: white;"
+                      alignment="CENTER" visible="false">
+                    <Button text="📎" onAction="#handleAttachFile" style="-fx-font-size: 16px;"/>
+                    <TextField fx:id="messageField" HBox.hgrow="ALWAYS" promptText="Type a message..."
+                               onAction="#handleSendMessage"/>
+                    <Button text="😊" onAction="#handleEmoji" style="-fx-font-size: 16px;"/>
+                    <Button text="Send" onAction="#handleSendMessage"
+                            style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-weight: bold;"
+                            prefWidth="80"/>
+                </HBox>
+            </VBox>
+
+        </SplitPane>
+    </center>
+
+</BorderPane>

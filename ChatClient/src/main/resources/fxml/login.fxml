@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.chatapp.client.controller.LoginController"
+            prefHeight="500.0" prefWidth="400.0"
+            style="-fx-background-color: #2C3E50;">
+
+    <VBox alignment="CENTER" spacing="20" AnchorPane.topAnchor="50" AnchorPane.leftAnchor="50"
+          AnchorPane.rightAnchor="50" AnchorPane.bottomAnchor="50">
+
+        <!-- Title -->
+        <Label text="Chat Application" textFill="white" style="-fx-font-size: 28px; -fx-font-weight: bold;">
+            <font>
+                <Font name="System Bold" size="28.0"/>
+            </font>
+        </Label>
+
+        <Label text="Login to your account" textFill="#BDC3C7" style="-fx-font-size: 14px;">
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+
+        <!-- Spacing -->
+        <Region prefHeight="20"/>
+
+        <!-- Username Field -->
+        <VBox spacing="5">
+            <Label text="Username" textFill="white"/>
+            <TextField fx:id="usernameField" promptText="Enter username"
+                       style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-prompt-text-fill: #7F8C8D;"
+                       prefHeight="35"/>
+        </VBox>
+
+        <!-- Password Field -->
+        <VBox spacing="5">
+            <Label text="Password" textFill="white"/>
+            <PasswordField fx:id="passwordField" promptText="Enter password"
+                           style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-prompt-text-fill: #7F8C8D;"
+                           prefHeight="35"/>
+        </VBox>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" textFill="#E74C3C" wrapText="true" visible="false"/>
+
+        <!-- Login Button -->
+        <Button fx:id="loginButton" text="Login" onAction="#handleLogin"
+                style="-fx-background-color: #3498DB; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"
+                prefWidth="300" prefHeight="40">
+            <cursor>
+                <javafx.scene.Cursor fx:constant="HAND"/>
+            </cursor>
+        </Button>
+
+        <!-- Register Link -->
+        <HBox alignment="CENTER" spacing="5">
+            <Label text="Don't have an account?" textFill="#BDC3C7"/>
+            <Hyperlink text="Register" textFill="#3498DB" onAction="#handleRegisterLink"
+                       style="-fx-font-weight: bold;"/>
+        </HBox>
+
+        <!-- Server Settings -->
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10 0 0 0;">
+            <Label text="Server:" textFill="#95A5A6" style="-fx-font-size: 11px;"/>
+            <TextField fx:id="serverHostField" text="localhost" prefWidth="120"
+                       style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-font-size: 11px;"
+                       prefHeight="25"/>
+            <Label text=":" textFill="#95A5A6"/>
+            <TextField fx:id="serverPortField" text="8888" prefWidth="60"
+                       style="-fx-background-color: #34495E; -fx-text-fill: white; -fx-font-size: 11px;"
+                       prefHeight="25"/>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
