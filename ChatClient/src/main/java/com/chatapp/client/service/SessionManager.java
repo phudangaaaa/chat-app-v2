@@ -1,6 +1,6 @@
 package com.chatapp.client.service;
 
-import com.chatapp.common.model.User;
+import com.chatapp.client.model.User;
 
 /**
  * SessionManager quản lý session của user hiện tại

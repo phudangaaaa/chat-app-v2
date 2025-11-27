@@ -1,7 +1,7 @@
 package com.chatapp.server.dao;
 
-import com.chatapp.common.model.Group;
-import com.chatapp.common.model.User;
+import com.chatapp.server.model.Group;
+import com.chatapp.server.model.User;
 import com.chatapp.server.util.DatabaseManager;
 
 import java.sql.*;

@@ -1,4 +1,4 @@
-package com.chatapp.common.model;
+package com.chatapp.client.model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

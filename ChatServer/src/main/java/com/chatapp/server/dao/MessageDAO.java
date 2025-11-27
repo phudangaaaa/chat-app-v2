@@ -1,7 +1,7 @@
 package com.chatapp.server.dao;
 
-import com.chatapp.common.enums.MessageType;
-import com.chatapp.common.model.Message;
+import com.chatapp.server.enums.MessageType;
+import com.chatapp.server.model.Message;
 import com.chatapp.server.util.DatabaseManager;
 
 import java.sql.*;

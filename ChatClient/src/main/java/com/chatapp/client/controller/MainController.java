@@ -2,9 +2,9 @@ package com.chatapp.client.controller;
 
 import com.chatapp.client.service.ServerConnection;
 import com.chatapp.client.service.SessionManager;
-import com.chatapp.common.enums.*;
-import com.chatapp.common.model.*;
-import com.chatapp.common.protocol.Packet;
+import com.chatapp.client.enums.*;
+import com.chatapp.client.model.*;
+import com.chatapp.client.protocol.Packet;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

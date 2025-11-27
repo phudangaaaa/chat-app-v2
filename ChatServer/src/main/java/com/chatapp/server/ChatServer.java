@@ -1,10 +1,10 @@
 package com.chatapp.server;
 
-import com.chatapp.common.enums.PacketType;
-import com.chatapp.common.enums.UserStatus;
-import com.chatapp.common.model.Message;
-import com.chatapp.common.model.User;
-import com.chatapp.common.protocol.Packet;
+import com.chatapp.server.enums.PacketType;
+import com.chatapp.server.enums.UserStatus;
+import com.chatapp.server.model.Message;
+import com.chatapp.server.model.User;
+import com.chatapp.server.protocol.Packet;
 import com.chatapp.server.dao.FriendDAO;
 import com.chatapp.server.dao.UserDAO;
 import com.chatapp.server.handler.ClientHandler;

@@ -18,13 +18,6 @@
     <description>Client module for Chat Application</description>
 
     <dependencies>
-        <!-- Common Module -->
-        <dependency>
-            <groupId>com.chatapp</groupId>
-            <artifactId>ChatCommon</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>

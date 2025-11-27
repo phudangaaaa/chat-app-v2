@@ -1,6 +1,6 @@
-package com.chatapp.common.model;
+package com.chatapp.server.model;
 
-import com.chatapp.common.enums.MessageType;
+import com.chatapp.server.enums.MessageType;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

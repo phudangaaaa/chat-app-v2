@@ -1,4 +1,4 @@
-package com.chatapp.common.enums;
+package com.chatapp.client.enums;
 
 /**
  * Enum định nghĩa các loại tin nhắn

@@ -1,9 +1,9 @@
 package com.chatapp.server.service;
 
-import com.chatapp.common.enums.PacketType;
-import com.chatapp.common.model.Group;
-import com.chatapp.common.model.User;
-import com.chatapp.common.protocol.Packet;
+import com.chatapp.server.enums.PacketType;
+import com.chatapp.server.model.Group;
+import com.chatapp.server.model.User;
+import com.chatapp.server.protocol.Packet;
 import com.chatapp.server.ChatServer;
 import com.chatapp.server.dao.GroupDAO;
 import com.chatapp.server.handler.ClientHandler;

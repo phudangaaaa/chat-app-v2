@@ -1,4 +1,4 @@
-package com.chatapp.common.protocol;
+package com.chatapp.client.protocol;
 
 import com.google.gson.*;
 import java.lang.reflect.Type;

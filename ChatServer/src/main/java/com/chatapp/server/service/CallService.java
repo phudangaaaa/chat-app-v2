@@ -1,10 +1,10 @@
 package com.chatapp.server.service;
 
-import com.chatapp.common.enums.CallType;
-import com.chatapp.common.enums.PacketType;
-import com.chatapp.common.model.CallSignal;
-import com.chatapp.common.model.User;
-import com.chatapp.common.protocol.Packet;
+import com.chatapp.server.enums.CallType;
+import com.chatapp.server.enums.PacketType;
+import com.chatapp.server.model.CallSignal;
+import com.chatapp.server.model.User;
+import com.chatapp.server.protocol.Packet;
 import com.chatapp.server.ChatServer;
 import com.chatapp.server.handler.ClientHandler;
 import com.google.gson.Gson;

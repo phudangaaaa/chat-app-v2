@@ -1,6 +1,6 @@
-package com.chatapp.common.protocol;
+package com.chatapp.client.protocol;
 
-import com.chatapp.common.enums.PacketType;
+import com.chatapp.client.enums.PacketType;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.Serializable;

@@ -63,14 +63,15 @@
 
 ## 🏗 Kiến trúc hệ thống
 
-Dự án được chia thành 3 module Maven độc lập:
+Dự án được chia thành 2 module Maven độc lập:
 
 ```
 chat-app-v2/
-├── ChatCommon/          # Các class dùng chung (Models, Protocol)
-├── ChatServer/          # Server application
-└── ChatClient/          # Client application (JavaFX)
+├── ChatServer/          # Server application (bao gồm models, protocol)
+└── ChatClient/          # Client application (JavaFX, bao gồm models, protocol)
 ```
+
+**Lưu ý**: Mỗi module chứa các class chung (enums, models, protocol) riêng biệt để đảm bảo tính độc lập.
 
 ### Mô hình Client-Server
 
@@ -197,18 +198,14 @@ chat-app-v2/
 ├── database/
 │   └── schema.sql                   # Database schema
 │
-├── ChatCommon/                      # Module chung
-│   ├── pom.xml
-│   └── src/main/java/com/chatapp/common/
-│       ├── enums/                   # Enums (UserStatus, MessageType, etc.)
-│       ├── model/                   # Models (User, Message, Group, etc.)
-│       └── protocol/                # Packet protocol
-│
-├── ChatServer/                      # Module Server
+├── ChatServer/                      # Module Server (độc lập)
 │   ├── pom.xml
 │   └── src/main/
 │       ├── java/com/chatapp/server/
 │       │   ├── ChatServer.java      # Main server class
+│       │   ├── enums/               # Enums (UserStatus, MessageType, etc.)
+│       │   ├── model/               # Models (User, Message, Group, etc.)
+│       │   ├── protocol/            # Packet protocol
 │       │   ├── handler/             # ClientHandler
 │       │   ├── service/             # Business logic services
 │       │   ├── dao/                 # Database access objects
@@ -216,11 +213,14 @@ chat-app-v2/
 │       └── resources/
 │           └── server.properties    # Server configuration
 │
-└── ChatClient/                      # Module Client
+└── ChatClient/                      # Module Client (độc lập)
     ├── pom.xml
     └── src/main/
         ├── java/com/chatapp/client/
         │   ├── ChatClientApp.java   # Main JavaFX application
+        │   ├── enums/               # Enums (UserStatus, MessageType, etc.)
+        │   ├── model/               # Models (User, Message, Group, etc.)
+        │   ├── protocol/            # Packet protocol
         │   ├── controller/          # FXML Controllers
         │   └── service/             # Client services
         └── resources/
@@ -228,6 +228,8 @@ chat-app-v2/
             ├── css/                 # Stylesheets
             └── client.properties    # Client configuration
 ```
+
+**Lưu ý**: Server và Client là 2 module hoàn toàn độc lập, mỗi module chứa bản sao riêng của các class chung (enums, model, protocol).
 
 ## 📖 Hướng dẫn sử dụng
 

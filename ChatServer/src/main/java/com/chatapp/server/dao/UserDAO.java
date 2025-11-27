@@ -1,8 +1,8 @@
 package com.chatapp.server.dao;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
-import com.chatapp.common.enums.UserStatus;
-import com.chatapp.common.model.User;
+import com.chatapp.server.enums.UserStatus;
+import com.chatapp.server.model.User;
 import com.chatapp.server.util.DatabaseManager;
 
 import java.sql.*;

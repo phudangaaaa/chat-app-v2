@@ -14,7 +14,6 @@
     <description>Desktop Chat Application with JavaFX and MySQL</description>
 
     <modules>
-        <module>ChatCommon</module>
         <module>ChatServer</module>
         <module>ChatClient</module>
     </modules>

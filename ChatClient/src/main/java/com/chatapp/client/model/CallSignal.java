@@ -1,6 +1,6 @@
-package com.chatapp.common.model;
+package com.chatapp.client.model;
 
-import com.chatapp.common.enums.CallType;
+import com.chatapp.client.enums.CallType;
 import java.io.Serializable;
 
 /**

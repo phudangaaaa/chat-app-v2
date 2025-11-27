@@ -1,6 +1,6 @@
-package com.chatapp.common.model;
+package com.chatapp.server.model;
 
-import com.chatapp.common.enums.UserStatus;
+import com.chatapp.server.enums.UserStatus;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

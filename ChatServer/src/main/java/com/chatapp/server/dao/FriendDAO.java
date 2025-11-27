@@ -1,8 +1,8 @@
 package com.chatapp.server.dao;
 
-import com.chatapp.common.enums.FriendRequestStatus;
-import com.chatapp.common.model.FriendRequest;
-import com.chatapp.common.model.User;
+import com.chatapp.server.enums.FriendRequestStatus;
+import com.chatapp.server.model.FriendRequest;
+import com.chatapp.server.model.User;
 import com.chatapp.server.util.DatabaseManager;
 
 import java.sql.*;

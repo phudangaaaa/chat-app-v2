@@ -18,13 +18,6 @@
     <description>Server module for Chat Application</description>
 
     <dependencies>
-        <!-- Common Module -->
-        <dependency>
-            <groupId>com.chatapp</groupId>
-            <artifactId>ChatCommon</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
         <!-- MySQL Driver -->
         <dependency>
             <groupId>com.mysql</groupId>
